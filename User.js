@@ -24,6 +24,7 @@ User.create = async (connection, firstname, lastname) => {
         const account = await Account.create(connection, userResponse.insertId);
 
         return {
+            operation: 'create_user',
             id: userResponse.insertId,
             firstname,
             lastname,
